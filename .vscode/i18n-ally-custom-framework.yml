@@ -1,0 +1,11 @@
+languageIds:
+  - javascript
+  - typescript
+  - javascriptreact
+  - typescriptreact
+usageMatchRegex:
+  - "[^\\w\\d]t\\([\\s\\n]*['\"]({key})['\"]"
+  - "keyName='({key})'"
+monopoly: true
+localesPath: apps/docs/src/i18n/locales/
+keystyle: nested
