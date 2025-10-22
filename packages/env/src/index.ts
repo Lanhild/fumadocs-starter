@@ -1,6 +1,6 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
-import { getRuntimeVariable } from "./getRuntimeVariable"
+import { getRuntimeVariable } from "./getRuntimeVariable";
 
 declare const window: {
   __ENV?: any;
@@ -23,7 +23,6 @@ const baseEnv = {
       .default("https://konvergo.com/legal"),
   },
   runtimeEnv: {
-   
     NEXT_PUBLIC_TERMS_OF_SERVICE_URL: getRuntimeVariable(
       "NEXT_PUBLIC_TERMS_OF_SERVICE_URL",
     ),
@@ -39,25 +38,16 @@ export const env = createEnv({
   },
   client: {
     ...baseEnv.client,
- 
   },
   experimental__runtimeEnv: {
     ...baseEnv.runtimeEnv,
-
   },
   skipValidation:
     process.env.SKIP_ENV_CHECK === "true" ||
     (typeof window !== "undefined" && window.__ENV === undefined),
   onValidationError(error) {
-    console.error(
-      "❌ Invalid environment variables:",
-      error,
-    );
-    throw new Error(
-      `Invalid environment variables: ${JSON.stringify(
-        error,
-      )}`,
-    );
+    console.error("❌ Invalid environment variables:", error);
+    throw new Error(`Invalid environment variables: ${JSON.stringify(error)}`);
   },
   onInvalidAccess: (variable: string) => {
     throw new Error(
