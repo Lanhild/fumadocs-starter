@@ -1,8 +1,8 @@
 {
   "recommendations": [
     "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
     "unifiedjs.vscode-mdx",
-    "biomejs.biome",
     "eamodio.gitlens",
     "Lokalise.i18n-ally"
   ]
