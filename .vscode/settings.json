@@ -7,32 +7,32 @@
     "next/router.d.ts",
     "next/dist/client/router.d.ts"
   ],
+  "biome.enabled": true,
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[css]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
-  "eslint.enable": true,
-  "biome.enabled": false,
+  "eslint.enable": false,
   "npm.packageManager": "bun",
-  "i18n-ally.localesPaths": ["apps/builder/src/i18n/locales"],
+  "i18n-ally.localesPaths": ["apps/docs/src/i18n/locales"],
   "i18n-ally.keystyle": "nested",
   "i18n-ally.displayLanguage": "en",
   "i18n-ally.sortKeys": true,

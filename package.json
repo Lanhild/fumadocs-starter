@@ -1,38 +1,35 @@
 {
-	"name": "root",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"build": "turbo run build",
-		"dev": "turbo run dev",
-		"lint": "turbo run lint",
-		"lint:fix": "turbo run lint:fix",
-		"format:check": "turbo run format:check",
-		"format:write": "turbo run format:write",
-		"typecheck": "turbo run typecheck",
-		"prepare": "husky",
-		"pre-commit": "turbo run lint format:check"
-	},
-	"devDependencies": {
-		"prettier": "3.6.2",
-		"commitizen": "4.3.1",
-		"cz-conventional-changelog": "3.3.0",
-		"husky": "9.1.7",
-		"sherif": "1.6.1",
-		"turbo": "2.5.8",
-		"typescript": "5.9.2"
-	},
-	"engines": {
-		"node": "^22"
-	},
-	"packageManager": "bun@1.2.8",
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	}
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "sherif -r unordered-dependencies -r packages-without-package-json",
+    "lint:fix": "bun lint --fix",
+    "format:check": "biome check .",
+    "format:write": "biome check . --fix --unsafe",
+    "typecheck": "turbo run typecheck",
+    "prepare": "husky",
+    "pre-commit": "turbo run format:check lint"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "sherif": "1.6.1",
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "9.1.7",
+    "turbo": "2.5.8",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": "^22"
+  },
+  "packageManager": "bun@1.2.8",
+  "workspaces": ["apps/*", "packages/*"],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
